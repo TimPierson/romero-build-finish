@@ -1,5 +1,5 @@
 (() => {
-  /* Set Jorge’s real inbox when ready — leave blank to draft without a To: address */
+  /* Set Jorge’s real inbox when ready */
   const CONSULT_EMAIL = "";
 
   const nav = document.querySelector("[data-nav]");
@@ -7,19 +7,50 @@
   const form = document.getElementById("consult-form");
   const statusEl = document.querySelector("[data-status]");
   const submitBtn = document.querySelector("[data-submit]");
+  const menuToggle = document.querySelector("[data-menu-toggle]");
+  const menuPanel = document.querySelector("[data-menu-panel]");
 
   if (year) year.textContent = String(new Date().getFullYear());
 
-  /* Sticky nav hairline on scroll */
+  /* Sticky nav */
   if (nav) {
     const onScroll = () => {
-      nav.classList.toggle("is-scrolled", window.scrollY > 8);
+      nav.classList.toggle("is-scrolled", window.scrollY > 6);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
   }
 
-  /* Reveal on enter — always show content as fallback */
+  /* Mobile menu */
+  if (menuToggle && menuPanel && nav) {
+    const closeMenu = () => {
+      nav.classList.remove("is-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Open menu");
+      menuPanel.setAttribute("hidden", "");
+    };
+    const openMenu = () => {
+      nav.classList.add("is-open");
+      menuToggle.setAttribute("aria-expanded", "true");
+      menuToggle.setAttribute("aria-label", "Close menu");
+      menuPanel.removeAttribute("hidden");
+    };
+
+    menuToggle.addEventListener("click", () => {
+      if (nav.classList.contains("is-open")) closeMenu();
+      else openMenu();
+    });
+
+    menuPanel.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 640) closeMenu();
+    });
+  }
+
+  /* Reveal */
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const items = document.querySelectorAll(".reveal");
   const showAll = () => items.forEach((el) => el.classList.add("is-in"));
@@ -36,17 +67,16 @@
           }
         });
       },
-      { rootMargin: "0px 0px -4% 0px", threshold: 0.05 }
+      { rootMargin: "0px 0px -4% 0px", threshold: 0.06 }
     );
     items.forEach((el, i) => {
-      el.style.transitionDelay = `${Math.min(i % 4, 3) * 60}ms`;
+      el.style.transitionDelay = `${Math.min(i % 5, 4) * 50}ms`;
       io.observe(el);
     });
-    /* Safety: never leave content hidden */
-    window.setTimeout(showAll, 1200);
+    window.setTimeout(showAll, 1000);
   }
 
-  /* Contact form → mailto (no backend) */
+  /* Consult form → mailto */
   if (form) {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -56,44 +86,51 @@
       const email = String(data.get("email") || "").trim();
       const phone = String(data.get("phone") || "").trim();
       const type = String(data.get("type") || "").trim();
+      const location = String(data.get("location") || "").trim();
       const message = String(data.get("message") || "").trim();
 
-      form.querySelectorAll(".field--error").forEach((el) => el.classList.remove("field--error"));
+      form.querySelectorAll(".field--error").forEach((el) => {
+        el.classList.remove("field--error");
+      });
 
       let ok = true;
-      if (!name) {
-        form.querySelector("#name")?.closest(".field")?.classList.add("field--error");
+      const mark = (id) => {
+        form.querySelector(`#${id}`)?.closest(".field")?.classList.add("field--error");
         ok = false;
-      }
-      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        form.querySelector("#email")?.closest(".field")?.classList.add("field--error");
-        ok = false;
-      }
-      if (!message) {
-        form.querySelector("#message")?.closest(".field")?.classList.add("field--error");
-        ok = false;
-      }
+      };
+
+      if (!name) mark("name");
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) mark("email");
+      if (!message) mark("message");
 
       if (!ok) {
         if (statusEl) statusEl.textContent = "Please complete the required fields.";
-        if (submitBtn) submitBtn.dataset.state = "error";
         return;
       }
 
       if (submitBtn) {
-        submitBtn.dataset.state = "loading";
+        submitBtn.disabled = true;
         submitBtn.textContent = "Opening…";
       }
 
-      const subject = encodeURIComponent(`Consult request — ${type} — ${name}`);
+      const typeLabel = {
+        kitchen: "Kitchen remodel",
+        bath: "Bathroom remodel",
+        renovation: "Whole-home / multi-room renovation",
+        finish: "Finish carpentry / trim",
+        other: "Other / not sure yet",
+      }[type] || type;
+
+      const subject = encodeURIComponent(`Consult request — ${typeLabel} — ${name}`);
       const body = encodeURIComponent(
         [
           `Name: ${name}`,
           `Email: ${email}`,
           phone ? `Phone: ${phone}` : null,
-          `Project type: ${type}`,
+          location ? `Location: ${location}` : null,
+          `Project type: ${typeLabel}`,
           "",
-          "Notes:",
+          "Details:",
           message,
         ]
           .filter(Boolean)
@@ -101,20 +138,17 @@
       );
 
       const to = CONSULT_EMAIL ? encodeURIComponent(CONSULT_EMAIL) : "";
-      const mailto = `mailto:${to}?subject=${subject}&body=${body}`;
-
-      window.location.href = mailto;
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
 
       if (statusEl) {
         statusEl.textContent = "Your email app should open with the request drafted.";
       }
       if (submitBtn) {
-        submitBtn.dataset.state = "success";
-        submitBtn.textContent = "Request drafted";
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Request sent";
         window.setTimeout(() => {
-          submitBtn.dataset.state = "";
           submitBtn.textContent = "Send request";
-        }, 3200);
+        }, 2800);
       }
     });
   }

@@ -3,297 +3,453 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Romero Build &amp; Finish · Jorge Antonio Romero · Boston</title>
-  <meta name="description" content="Romero Build &amp; Finish — craft-led building, renovations, and finish work by Jorge Antonio Romero. Based in Boston, MA." />
-  <meta name="theme-color" content="#f7f3eb" />
+  <title>Romero Build &amp; Finish | Remodels &amp; Construction · Boston, MA</title>
+  <meta name="description" content="Owner-operated remodel and finish contractor in Boston. Kitchens, baths, renovations, and quality construction with Jorge Antonio Romero — clear scope, clean sites, solid results." />
+  <meta name="theme-color" content="#161513" />
+  <meta property="og:title" content="Romero Build &amp; Finish · Boston Remodels" />
+  <meta property="og:description" content="Professional remodels, renovations, and finish work. Owner-operated by Jorge Antonio Romero in Boston, MA." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://timpierson.github.io/romero-build-finish/" />
+  <link rel="canonical" href="https://timpierson.github.io/romero-build-finish/" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,560;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="./tokens.css" />
   <link rel="stylesheet" href="./styles.css" />
-  <script>
-    document.documentElement.classList.add("js");
-  </script>
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
   <a class="sr-only" href="#main">Skip to content</a>
 
-  <!-- N9 · Edge-aligned minimal -->
-  <header class="nav-edge" data-nav>
-    <a class="wordmark" href="#top">
-      Romero
-      <span>Build &amp; Finish</span>
-    </a>
-    <a class="btn" href="#contact">Request consult</a>
+  <header class="nav" data-nav>
+    <div class="nav__inner">
+      <a class="brand" href="#top">
+        <span class="brand__name">Romero Build &amp; Finish</span>
+        <span class="brand__tag">Boston · Remodels &amp; Construction</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#why-us">Why us</a>
+        <a href="#process">Process</a>
+        <a href="#about">About</a>
+        <a class="btn btn--primary" href="#contact">Get a consult</a>
+      </nav>
+
+      <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" data-menu-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__panel" data-menu-panel hidden>
+      <a href="#services">Services</a>
+      <a href="#why-us">Why us</a>
+      <a href="#process">Process</a>
+      <a href="#about">About</a>
+      <a class="btn btn--primary" href="#contact">Get a consult</a>
+    </div>
   </header>
 
   <main id="main">
-    <!-- H2 · Split diptych hero -->
-    <section class="wrap split" id="top" aria-labelledby="hero-title">
-      <div class="split__copy reveal">
-        <p class="split__kicker">Boston · Build &amp; finish</p>
-        <h1 class="split__title" id="hero-title">Built with care. Finished with pride.</h1>
-        <p class="split__lede">
-          Romero Build &amp; Finish is the craft practice of Jorge Antonio Romero—
-          renovations and finish work shaped by a builder’s eye and a principal’s attention.
-        </p>
-        <div class="split__actions">
-          <a class="btn btn--solid" href="#contact">Start a project</a>
-          <a class="btn" href="#services">What we offer</a>
+    <!-- 1. Hero: who + what + CTA -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap hero__grid">
+        <div class="reveal">
+          <p class="kicker">Boston remodel &amp; construction</p>
+          <h1 class="hero__title" id="hero-title">Quality remodels. Clean work. Straight answers.</h1>
+          <p class="hero__lede">
+            Romero Build &amp; Finish handles residential remodels, renovations, and finish work
+            across greater Boston. You work directly with owner Jorge Antonio Romero—from walkthrough to final punch list.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#contact">Request a consult</a>
+            <a class="btn btn--light" href="#services">View services</a>
+          </div>
+          <div class="hero__facts" role="list">
+            <div class="hero__fact" role="listitem">
+              <strong>Owner-operated</strong>
+              <span>One point of contact on every job</span>
+            </div>
+            <div class="hero__fact" role="listitem">
+              <strong>Boston-based</strong>
+              <span>Local crew, local standards</span>
+            </div>
+            <div class="hero__fact" role="listitem">
+              <strong>Build to finish</strong>
+              <span>Structure through final detail</span>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="split__visual reveal">
-        <figure class="frame">
-          <img
-            src="./assets/portrait.jpg"
-            width="700"
-            height="345"
-            alt="Jorge Antonio Romero with his child outdoors"
-            fetchpriority="high"
-          />
-          <figcaption class="frame__caption">Jorge Antonio Romero</figcaption>
-        </figure>
+
+        <aside class="hero__card reveal" aria-label="Project inquiry summary">
+          <h2>Planning a remodel?</h2>
+          <p>Kitchens, baths, full renovations, or finish work—tell us what you need and we’ll schedule a site visit.</p>
+          <ul class="hero__card-list">
+            <li>Clear written scope before work starts</li>
+            <li>Respect for your home during construction</li>
+            <li>Walkthrough and punch list at the end</li>
+          </ul>
+          <a class="btn btn--primary" href="#contact">Start with a consult →</a>
+        </aside>
       </div>
     </section>
 
-    <!-- Services -->
+    <!-- 2. Trust bar -->
+    <section class="trust" aria-label="Company highlights">
+      <div class="wrap trust__row">
+        <div class="trust__item reveal">
+          <strong>Residential focus</strong>
+          <span>Homes and multi-unit remodels</span>
+        </div>
+        <div class="trust__item reveal">
+          <strong>Direct communication</strong>
+          <span>You talk to the person running the job</span>
+        </div>
+        <div class="trust__item reveal">
+          <strong>Job-site discipline</strong>
+          <span>Protected floors, tidy work areas</span>
+        </div>
+        <div class="trust__item reveal">
+          <strong>Finish-minded</strong>
+          <span>Details get the same care as framing</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Services -->
     <section class="services" id="services" aria-labelledby="services-title">
       <div class="wrap">
         <header class="services__head reveal">
-          <p class="services__kicker">Capabilities</p>
-          <h2 class="services__title" id="services-title">From structure to the last detail</h2>
+          <div>
+            <p class="kicker">Services</p>
+            <h2 class="section-title" id="services-title">What we build and remodel</h2>
+          </div>
+          <p class="section-lede">
+            Practical construction and finish work for homeowners who want the job done right—
+            not rushed, not oversold.
+          </p>
         </header>
+
         <div class="services__grid">
           <article class="service reveal">
-            <p class="service__index">01</p>
-            <h3 class="service__title">Build</h3>
-            <p class="service__body">
-              Ground-up work and structural renovations planned for how a home actually lives—
-              not just how it photographs.
+            <div class="service__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg>
+            </div>
+            <h3>Home renovations</h3>
+            <p>
+              Whole-home or multi-room renovations planned around how you live.
+              Structural work, layouts, and sequencing coordinated end to end.
             </p>
+            <div class="service__tags">
+              <span>Full remodels</span>
+              <span>Open concepts</span>
+              <span>Updates</span>
+            </div>
           </article>
+
           <article class="service reveal">
-            <p class="service__index">02</p>
-            <h3 class="service__title">Finish</h3>
-            <p class="service__body">
-              Trim, surfaces, and the quiet craft that makes a room feel complete.
-              Clean lines. Honest materials. Lasting joinery.
+            <div class="service__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 10h16v10H4zM4 10V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3M8 14h3M8 17h8"/></svg>
+            </div>
+            <h3>Kitchens</h3>
+            <p>
+              Layout changes, cabinets, counters, backsplash, lighting, and plumbing—
+              built for daily use, not just show-day photos.
             </p>
+            <div class="service__tags">
+              <span>Cabinets</span>
+              <span>Counters</span>
+              <span>Electrical</span>
+            </div>
           </article>
+
           <article class="service reveal">
-            <p class="service__index">03</p>
-            <h3 class="service__title">Renovate</h3>
-            <p class="service__body">
-              Kitchens, baths, and whole-home updates that respect the original
-              bones of the building while raising the standard of everyday use.
+            <div class="service__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 21V8l8-4 8 4v13M8 21v-6h8v6M9 12h.01M15 12h.01"/></svg>
+            </div>
+            <h3>Bathrooms</h3>
+            <p>
+              Tile, wet areas, fixtures, vanities, and waterproofing done carefully so the
+              room lasts—not just looks finished on day one.
             </p>
+            <div class="service__tags">
+              <span>Tile</span>
+              <span>Showers</span>
+              <span>Fixtures</span>
+            </div>
+          </article>
+
+          <article class="service reveal">
+            <div class="service__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M14 6l7 7-7 7M3 6h11M3 12h11M3 18h7"/></svg>
+            </div>
+            <h3>Finish carpentry &amp; detail</h3>
+            <p>
+              Trim, doors, casing, built-ins, and the last layer of craft that makes a remodel
+              feel complete and intentional.
+            </p>
+            <div class="service__tags">
+              <span>Trim</span>
+              <span>Doors</span>
+              <span>Built-ins</span>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Split · craft story -->
-    <section class="wrap split split--flip" aria-labelledby="craft-title">
-      <div class="split__copy reveal">
-        <p class="split__kicker">Approach</p>
-        <h2 class="split__title split__title--s" id="craft-title">A builder you can reach. A finish you can feel.</h2>
-        <p class="split__body">
-          Romero Build &amp; Finish keeps the line short: you work with Jorge directly.
-          Scope is clear, communication is plain, and the finish is treated as seriously as the frame.
-        </p>
-        <p class="split__body">
-          Whether you are opening walls, refining a single room, or seeing a renovation through,
-          the standard is the same—careful work, clean sites, and results that hold up under daily life.
-        </p>
-        <p class="split__meta">Based in Boston, MA · Serving the greater Boston area</p>
-      </div>
-      <div class="split__visual reveal">
-        <div class="craft-panel" aria-hidden="true">
-          <p class="craft-panel__label">BuildnFinish</p>
-          <p class="craft-panel__sub">Craft · Structure · Detail</p>
+    <!-- 4. Why work with us -->
+    <section class="why" id="why-us" aria-labelledby="why-title">
+      <div class="wrap why__grid">
+        <div class="reveal">
+          <p class="kicker">Why Romero</p>
+          <h2 class="section-title" id="why-title">A remodel partner who stays on the job</h2>
+          <p class="section-lede">
+            Big companies hand you off. With Romero Build &amp; Finish, the person who quotes the work
+            is the person responsible for delivering it.
+          </p>
+        </div>
+        <div class="why__points">
+          <div class="why__point reveal">
+            <span class="why__num">01</span>
+            <div>
+              <h3>Honest scope</h3>
+              <p>
+                We write down what’s included, what isn’t, and what could change once walls open.
+                Fewer surprises mid-project.
+              </p>
+            </div>
+          </div>
+          <div class="why__point reveal">
+            <span class="why__num">02</span>
+            <div>
+              <h3>Respect for the house</h3>
+              <p>
+                Floors protected, work zones contained, daily cleanup. Your home stays livable
+                whenever the schedule allows.
+              </p>
+            </div>
+          </div>
+          <div class="why__point reveal">
+            <span class="why__num">03</span>
+            <div>
+              <h3>Finish standards</h3>
+              <p>
+                Frame and finish are one standard—not two different attitudes. Details get checked
+                before we call a room done.
+              </p>
+            </div>
+          </div>
+          <div class="why__point reveal">
+            <span class="why__num">04</span>
+            <div>
+              <h3>Clear updates</h3>
+              <p>
+                You’ll know schedule, material decisions, and next steps. No radio silence for weeks
+                while work stalls.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- F4 · Process -->
+    <!-- 5. Process -->
     <section class="process" id="process" aria-labelledby="process-title">
       <div class="wrap">
         <header class="process__head reveal">
-          <p class="process__kicker">How it works</p>
-          <h2 class="process__title" id="process-title">A clear path from first call to final walkthrough</h2>
+          <p class="kicker">How a project runs</p>
+          <h2 class="section-title" id="process-title">From first visit to final walkthrough</h2>
+          <p class="section-lede" style="margin-top: var(--space-md);">
+            A simple path so you always know where the job stands.
+          </p>
         </header>
-        <ol class="steps">
-          <li class="step reveal">
-            <span class="step__num" aria-hidden="true">01</span>
-            <div>
-              <h3 class="step__title">Consult</h3>
-              <p class="step__body">
-                We walk the space, listen to what you need, and map constraints—
-                budget, timeline, and the life of the home.
-              </p>
-            </div>
+
+        <ol class="process__steps">
+          <li class="process__step reveal">
+            <p class="process__n">STEP 01</p>
+            <h3>Consult</h3>
+            <p>Site visit, goals, constraints, budget range, and timeline. No hard sell—just a clear read on the work.</p>
           </li>
-          <li class="step reveal">
-            <span class="step__num" aria-hidden="true">02</span>
-            <div>
-              <h3 class="step__title">Plan</h3>
-              <p class="step__body">
-                Scope, materials, and sequencing are written down so everyone knows
-                what “done” looks like before work begins.
-              </p>
-            </div>
+          <li class="process__step reveal">
+            <p class="process__n">STEP 02</p>
+            <h3>Proposal</h3>
+            <p>Written scope, approach, and next steps so you can compare apples to apples before you commit.</p>
           </li>
-          <li class="step reveal">
-            <span class="step__num" aria-hidden="true">03</span>
-            <div>
-              <h3 class="step__title">Build</h3>
-              <p class="step__body">
-                Construction moves with care—protected floors, tidy sites, and updates
-                when decisions need your eye.
-              </p>
-            </div>
+          <li class="process__step reveal">
+            <p class="process__n">STEP 03</p>
+            <h3>Build</h3>
+            <p>Construction with protection, sequencing, and check-ins when choices come up behind the drywall.</p>
           </li>
-          <li class="step reveal">
-            <span class="step__num" aria-hidden="true">04</span>
-            <div>
-              <h3 class="step__title">Finish</h3>
-              <p class="step__body">
-                Detail work, punch list, and a final walkthrough. We don’t leave until
-                the craft meets the plan.
-              </p>
-            </div>
+          <li class="process__step reveal">
+            <p class="process__n">STEP 04</p>
+            <h3>Finish &amp; handoff</h3>
+            <p>Detail work, punch list, and walkthrough. We don’t walk away until the agreed work is complete.</p>
           </li>
         </ol>
       </div>
     </section>
 
-    <!-- About · dark band -->
+    <!-- 6. About -->
     <section class="about" id="about" aria-labelledby="about-title">
-      <div class="wrap split">
-        <div class="split__copy reveal">
-          <p class="split__kicker">Principal</p>
-          <h2 class="split__title split__title--s" id="about-title">Jorge Antonio Romero</h2>
-          <p class="split__body">
-            Entrepreneur and builder behind Romero Build &amp; Finish.
-            Jorge leads each engagement personally—from the first walkthrough
-            to the last coat of finish.
-          </p>
-          <p class="split__body">
-            The practice is rooted in Boston, with a reputation built one careful job at a time.
-            Follow the work and day-to-day craft on Instagram.
-          </p>
-          <div class="pill-row">
-            <span class="pill">Entrepreneur</span>
-            <span class="pill">Boston, MA</span>
-            <span class="pill">Build &amp; Finish</span>
-          </div>
-          <p class="split__meta" style="margin-top: 1.5rem;">
-            <a class="btn btn--ghost-light" href="https://www.instagram.com/romero.jorgeantonio/" target="_blank" rel="noopener noreferrer">
-              @romero.jorgeantonio ↗
-            </a>
-          </p>
+      <div class="wrap about__grid">
+        <div class="about__photo reveal">
+          <img
+            src="./assets/jorge.jpg"
+            width="400"
+            height="400"
+            alt="Jorge Antonio Romero, owner of Romero Build &amp; Finish"
+            loading="lazy"
+          />
         </div>
-        <div class="split__visual reveal">
-          <figure class="frame frame--round">
-            <img
-              src="./assets/avatar.jpg"
-              width="176"
-              height="176"
-              alt="Portrait of Jorge Antonio Romero"
-              loading="lazy"
-            />
-          </figure>
+        <div class="reveal">
+          <p class="kicker">Owner</p>
+          <h2 id="about-title">Jorge Antonio Romero</h2>
+          <p>
+            Jorge runs Romero Build &amp; Finish as an owner-operator out of Boston.
+            He’s hands-on with planning, crew coordination, and the finish quality on every project.
+          </p>
+          <p>
+            Whether you’re gutting a bath, reworking a kitchen, or renovating a full floor,
+            you get a builder who treats the job like it’s his own house—and who answers the phone.
+          </p>
+          <div class="about__meta">
+            <span>Owner-operator</span>
+            <span>Boston, MA</span>
+            <span>Remodels &amp; finish</span>
+          </div>
+          <a class="btn btn--light" href="https://www.instagram.com/romero.jorgeantonio/" target="_blank" rel="noopener noreferrer">
+            Follow on Instagram ↗
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- 7. Contact -->
     <section class="contact" id="contact" aria-labelledby="contact-title">
       <div class="wrap contact__grid">
         <div class="reveal">
-          <p class="contact__kicker">Contact</p>
-          <h2 class="contact__title" id="contact-title">Tell us about the space</h2>
-          <p class="contact__lede">
-            Share a few details about your project. Jorge will follow up to schedule
-            a consult and walk the property.
+          <p class="kicker">Contact</p>
+          <h2 class="section-title" id="contact-title">Tell us about your project</h2>
+          <p class="section-lede">
+            Share the basics. Jorge will follow up to set a consult and walk the property when it makes sense.
           </p>
-          <dl class="contact__list">
-            <div>
-              <dt class="contact__label">Location</dt>
-              <dd>Boston, Massachusetts</dd>
+
+          <dl class="contact__info">
+            <div class="contact__row">
+              <dt>Service area</dt>
+              <dd>Boston &amp; greater Boston</dd>
             </div>
-            <div>
-              <dt class="contact__label">Instagram</dt>
+            <div class="contact__row">
+              <dt>Company</dt>
+              <dd>Romero Build &amp; Finish</dd>
+            </div>
+            <div class="contact__row">
+              <dt>Instagram</dt>
               <dd>
                 <a href="https://www.instagram.com/romero.jorgeantonio/" target="_blank" rel="noopener noreferrer">
                   @romero.jorgeantonio
                 </a>
               </dd>
             </div>
-            <div>
-              <dt class="contact__label">Practice</dt>
-              <dd>Romero Build &amp; Finish</dd>
-            </div>
           </dl>
         </div>
 
         <form class="form reveal" id="consult-form" novalidate>
+          <h3 class="form__title">Request a consult</h3>
+          <p class="form__intro">Takes about two minutes. We’ll reply to schedule next steps.</p>
+
           <div class="form__row">
             <div class="field">
-              <label for="name">Name</label>
-              <input id="name" name="name" type="text" autocomplete="name" required placeholder="Your full name" />
+              <label for="name">Full name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required placeholder="Jane Smith" />
             </div>
             <div class="field">
               <label for="email">Email</label>
-              <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com" />
+              <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@email.com" />
             </div>
           </div>
+
           <div class="form__row">
             <div class="field">
-              <label for="phone">Phone <span class="field__hint">(optional)</span></label>
-              <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(617) 000-0000" />
+              <label for="phone">Phone <span class="opt">(optional)</span></label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(617) 555-0100" />
             </div>
             <div class="field">
               <label for="type">Project type</label>
-              <select id="type" name="type">
-                <option value="renovation">Renovation</option>
-                <option value="finish">Finish work</option>
-                <option value="build">Build / addition</option>
-                <option value="other">Other / not sure</option>
+              <select id="type" name="type" required>
+                <option value="kitchen">Kitchen remodel</option>
+                <option value="bath">Bathroom remodel</option>
+                <option value="renovation">Whole-home / multi-room renovation</option>
+                <option value="finish">Finish carpentry / trim</option>
+                <option value="other">Other / not sure yet</option>
               </select>
             </div>
           </div>
+
           <div class="field">
-            <label for="message">Project notes</label>
-            <textarea id="message" name="message" required placeholder="Neighborhood, rooms involved, timing, and anything we should know…"></textarea>
+            <label for="location">City / neighborhood</label>
+            <input id="location" name="location" type="text" autocomplete="address-level2" placeholder="e.g. South End, Cambridge, Quincy" />
           </div>
+
+          <div class="field">
+            <label for="message">Project details</label>
+            <textarea id="message" name="message" required placeholder="Rooms involved, rough timeline, budget range if you have one, and anything else we should know…"></textarea>
+          </div>
+
           <div class="form__foot">
-            <p class="form__note">Opens your email client with a ready-to-send message. No account required.</p>
-            <button class="btn btn--solid" type="submit" data-submit>Send request</button>
+            <p class="form__note">Opens your email app with a ready-to-send message. No account needed.</p>
+            <button class="btn btn--primary" type="submit" data-submit>Send request</button>
           </div>
           <p class="form__status" role="status" aria-live="polite" data-status></p>
         </form>
       </div>
     </section>
+
+    <!-- 8. Closing CTA -->
+    <section class="cta-band" aria-label="Final call to action">
+      <div class="wrap cta-band__inner reveal">
+        <div>
+          <h2>Ready to talk through the work?</h2>
+          <p>Send a few details and we’ll follow up about a site consult.</p>
+        </div>
+        <a class="btn btn--primary" href="#contact">Get a consult</a>
+      </div>
+    </section>
   </main>
 
-  <!-- Ft6 · Letter close -->
   <footer class="footer">
-    <p class="footer__close">Ready when you are.</p>
-    <p class="footer__sign">— Jorge Antonio Romero</p>
-    <p class="footer__ps">
-      Romero Build &amp; Finish · Craft renovations and finish work in Boston.
-    </p>
-    <div class="footer__meta">
-      <span>© <span data-year>2026</span> Romero Build &amp; Finish</span>
-      <div class="footer__links">
-        <a href="#services">Services</a>
-        <a href="#process">Process</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a href="https://www.instagram.com/romero.jorgeantonio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+    <div class="wrap">
+      <div class="footer__top">
+        <div>
+          <a class="brand" href="#top">
+            <span class="brand__name">Romero Build &amp; Finish</span>
+            <span class="brand__tag">Boston · Remodels &amp; Construction</span>
+          </a>
+          <p class="footer__blurb">
+            Owner-operated remodeling and finish work for homeowners who want clear communication and solid craft.
+          </p>
+        </div>
+        <div class="footer__cols">
+          <div>
+            <h3>Explore</h3>
+            <a href="#services">Services</a>
+            <a href="#why-us">Why us</a>
+            <a href="#process">Process</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div>
+            <h3>Connect</h3>
+            <a href="https://www.instagram.com/romero.jorgeantonio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="#contact">Request a consult</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> Romero Build &amp; Finish · Boston, MA</span>
+        <span>Jorge Antonio Romero, Owner</span>
       </div>
     </div>
   </footer>

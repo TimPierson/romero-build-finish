@@ -1,55 +1,52 @@
-/* Hallmark · macrostructure: Split Studio · tone: luxury · theme: Atelier
- * genre: editorial · nav: N9 Edge-aligned · footer: Ft6 Letter close
- * hero: H2 Split diptych (ratio 6/6, right=photo, divider=gutter)
- * features: F4 Step sequence (01/02/03/04 · vertical) · CTA: C1 outlined chip
- * enrichment: photographic portrait (supplied) · axes: light / high-contrast-serif / warm
- * audience: Boston homeowners · use: request consultation · tone: luxury
- */
+/* Romero Build & Finish — professional remodel / construction system */
 
 :root {
-  /* Paper — warm limestone */
-  --color-paper:       oklch(97% 0.012 75);
-  --color-paper-2:     oklch(94% 0.014 72);
-  --color-paper-3:     oklch(90% 0.016 70);
+  /* Surfaces — warm concrete & paper */
+  --color-paper:        #f6f3ee;
+  --color-paper-2:      #eee9e1;
+  --color-paper-3:      #e4ddd2;
+  --color-white:        #fbfaf7;
 
-  /* Ink — espresso */
-  --color-ink:         oklch(18% 0.018 55);
-  --color-ink-2:       oklch(28% 0.014 55);
-  --color-muted:       oklch(48% 0.012 60);
-  --color-faint:       oklch(62% 0.010 65);
+  /* Ink — charcoal / steel */
+  --color-ink:          #1a1917;
+  --color-ink-2:        #2e2c29;
+  --color-muted:        #5c574f;
+  --color-faint:        #8a847a;
 
-  /* Rules & surfaces */
-  --color-rule:        oklch(84% 0.012 70);
-  --color-rule-2:      oklch(78% 0.014 68);
+  /* Lines */
+  --color-rule:         #d4cdc1;
+  --color-rule-2:       #c2b9ab;
 
-  /* Accent — aged copper (craft metal) */
-  --color-accent:      oklch(48% 0.12 48);
-  --color-accent-soft: oklch(48% 0.12 48 / 0.12);
-  --color-accent-ink:  oklch(97% 0.01 75);
-  --color-focus:       oklch(52% 0.14 48);
+  /* Accent — weathered copper / safety amber restrained */
+  --color-accent:       #9a5b2f;
+  --color-accent-hover: #7d4924;
+  --color-accent-soft:  rgba(154, 91, 47, 0.12);
+  --color-accent-ink:   #fbfaf7;
 
-  /* Dark band (footer / ink panel) */
-  --color-ink-band:    oklch(16% 0.016 50);
-  --color-ink-band-2:  oklch(22% 0.014 50);
-  --color-on-ink:      oklch(94% 0.012 75);
-  --color-on-ink-muted: oklch(72% 0.014 70);
+  /* Dark bands */
+  --color-dark:         #161513;
+  --color-dark-2:       #22201d;
+  --color-on-dark:      #f3efe8;
+  --color-on-dark-muted:#b0a89c;
+
+  /* Focus */
+  --color-focus:        #9a5b2f;
 
   /* Type */
-  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-  --font-body:    "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
-  --font-wordmark: "Fraunces", Georgia, serif;
+  --font-display: "DM Sans", "Segoe UI", system-ui, sans-serif;
+  --font-body:    "Source Sans 3", "Segoe UI", system-ui, sans-serif;
 
-  /* Scale — major third */
+  /* Scale */
   --text-xs:   0.75rem;
   --text-sm:   0.875rem;
   --text-base: 1.0625rem;
-  --text-md:   1.25rem;
-  --text-lg:   1.5rem;
-  --text-xl:   1.875rem;
-  --text-2xl:  2.375rem;
-  --text-3xl:  3rem;
-  --text-display: clamp(2.5rem, 4.5vw + 0.75rem, 4.75rem);
-  --text-display-s: clamp(2rem, 3.2vw + 0.5rem, 3.25rem);
+  --text-md:   1.1875rem;
+  --text-lg:   1.375rem;
+  --text-xl:   1.75rem;
+  --text-2xl:  2.25rem;
+  --text-3xl:  2.75rem;
+  --text-hero: clamp(2.25rem, 4.5vw + 0.5rem, 3.75rem);
+  --text-section: clamp(1.75rem, 2.5vw + 0.5rem, 2.5rem);
 
   /* Space — 4pt */
   --space-2xs: 0.25rem;
@@ -59,29 +56,21 @@
   --space-lg:  2rem;
   --space-xl:  3rem;
   --space-2xl: 4.5rem;
-  --space-3xl: 7rem;
-  --space-4xl: 10rem;
+  --space-3xl: 6.5rem;
 
-  --page-gutter: clamp(1.25rem, 4vw, 3.5rem);
-  --page-max:    72rem;
-  --measure:     38rem;
+  --page-gutter: clamp(1.25rem, 4vw, 2.75rem);
+  --page-max: 70rem;
+  --measure: 38rem;
 
-  --radius-sm: 2px;
-  --radius-md: 4px;
+  --radius: 4px;
   --radius-lg: 8px;
-  --radius-pill: 999px;
 
-  --rule-hair: 1px;
+  --shadow: 0 12px 40px -16px rgba(26, 25, 23, 0.28);
+  --shadow-sm: 0 4px 16px -6px rgba(26, 25, 23, 0.18);
 
-  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
-  --ease-in:     cubic-bezier(0.55, 0, 1, 0.45);
-  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur: 220ms;
 
-  --dur-short: 160ms;
-  --dur-med:   280ms;
-  --dur-long:  480ms;
-
-  --shadow-soft: 0 18px 40px -24px oklch(18% 0.02 55 / 0.35);
-  --z-nav: 40;
-  --z-focus: 50;
+  --z-nav: 50;
+  --nav-h: 4.25rem;
 }
