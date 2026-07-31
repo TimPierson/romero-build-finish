@@ -116,7 +116,7 @@
       const typeLabel = {
         remodel: "Home remodel / interiors",
         kitchen: "Kitchen",
-        flooring: "Flooring / tile",
+        flooring: "Flooring / tile / epoxy",
         deck: "Deck / outdoor structure",
         sauna: "Sauna / spa / outdoor shower",
         fab: "Steel / custom fabrication",
