@@ -114,10 +114,11 @@
       }
 
       const typeLabel = {
-        kitchen: "Kitchen remodel",
-        bath: "Bathroom remodel",
-        renovation: "Whole-home / multi-room renovation",
-        finish: "Finish carpentry / trim",
+        remodel: "Home remodel / interiors",
+        flooring: "Flooring / tile",
+        deck: "Deck / outdoor structure",
+        fab: "Steel / custom fabrication",
+        site: "Site work / equipment",
         other: "Other / not sure yet",
       }[type] || type;
 
