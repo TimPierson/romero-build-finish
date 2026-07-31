@@ -1,0 +1,87 @@
+/* Hallmark · macrostructure: Split Studio · tone: luxury · theme: Atelier
+ * genre: editorial · nav: N9 Edge-aligned · footer: Ft6 Letter close
+ * hero: H2 Split diptych (ratio 6/6, right=photo, divider=gutter)
+ * features: F4 Step sequence (01/02/03/04 · vertical) · CTA: C1 outlined chip
+ * enrichment: photographic portrait (supplied) · axes: light / high-contrast-serif / warm
+ * audience: Boston homeowners · use: request consultation · tone: luxury
+ */
+
+:root {
+  /* Paper — warm limestone */
+  --color-paper:       oklch(97% 0.012 75);
+  --color-paper-2:     oklch(94% 0.014 72);
+  --color-paper-3:     oklch(90% 0.016 70);
+
+  /* Ink — espresso */
+  --color-ink:         oklch(18% 0.018 55);
+  --color-ink-2:       oklch(28% 0.014 55);
+  --color-muted:       oklch(48% 0.012 60);
+  --color-faint:       oklch(62% 0.010 65);
+
+  /* Rules & surfaces */
+  --color-rule:        oklch(84% 0.012 70);
+  --color-rule-2:      oklch(78% 0.014 68);
+
+  /* Accent — aged copper (craft metal) */
+  --color-accent:      oklch(48% 0.12 48);
+  --color-accent-soft: oklch(48% 0.12 48 / 0.12);
+  --color-accent-ink:  oklch(97% 0.01 75);
+  --color-focus:       oklch(52% 0.14 48);
+
+  /* Dark band (footer / ink panel) */
+  --color-ink-band:    oklch(16% 0.016 50);
+  --color-ink-band-2:  oklch(22% 0.014 50);
+  --color-on-ink:      oklch(94% 0.012 75);
+  --color-on-ink-muted: oklch(72% 0.014 70);
+
+  /* Type */
+  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-body:    "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-wordmark: "Fraunces", Georgia, serif;
+
+  /* Scale — major third */
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1.0625rem;
+  --text-md:   1.25rem;
+  --text-lg:   1.5rem;
+  --text-xl:   1.875rem;
+  --text-2xl:  2.375rem;
+  --text-3xl:  3rem;
+  --text-display: clamp(2.5rem, 4.5vw + 0.75rem, 4.75rem);
+  --text-display-s: clamp(2rem, 3.2vw + 0.5rem, 3.25rem);
+
+  /* Space — 4pt */
+  --space-2xs: 0.25rem;
+  --space-xs:  0.5rem;
+  --space-sm:  0.75rem;
+  --space-md:  1.25rem;
+  --space-lg:  2rem;
+  --space-xl:  3rem;
+  --space-2xl: 4.5rem;
+  --space-3xl: 7rem;
+  --space-4xl: 10rem;
+
+  --page-gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --page-max:    72rem;
+  --measure:     38rem;
+
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-pill: 999px;
+
+  --rule-hair: 1px;
+
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in:     cubic-bezier(0.55, 0, 1, 0.45);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --dur-short: 160ms;
+  --dur-med:   280ms;
+  --dur-long:  480ms;
+
+  --shadow-soft: 0 18px 40px -24px oklch(18% 0.02 55 / 0.35);
+  --z-nav: 40;
+  --z-focus: 50;
+}
