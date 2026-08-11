@@ -1,5 +1,5 @@
 (() => {
-  /* Set Jorge’s real inbox when ready */
+  /* Set George’s real inbox when ready */
   const CONSULT_EMAIL = "";
 
   const nav = document.querySelector("[data-nav]");

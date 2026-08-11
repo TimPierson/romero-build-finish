@@ -189,12 +189,25 @@ h1, h2, h3 {
 .brand:hover { color: var(--color-ink); }
 
 .brand__logo {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: auto;
+  height: 2.75rem;
+  max-width: min(11.5rem, 42vw);
   border-radius: 4px;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: left center;
   flex-shrink: 0;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+  background: var(--color-white);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+}
+
+.brand--footer .brand__logo {
+  height: auto;
+  width: min(14rem, 70%);
+  max-width: 14rem;
+  background: var(--color-white);
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
 .brand__text {
@@ -218,10 +231,6 @@ h1, h2, h3 {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-muted);
-}
-
-.footer .brand__logo {
-  box-shadow: 0 2px 8px rgba(0,0,0,0.35);
 }
 
 .nav__links {
@@ -293,11 +302,13 @@ h1, h2, h3 {
 }
 
 .hero__card-logo {
-  width: 4rem;
-  height: 4rem;
+  width: min(12rem, 100%);
+  height: auto;
   border-radius: 6px;
-  object-fit: cover;
+  object-fit: contain;
   margin-bottom: var(--space-md);
+  background: var(--color-paper);
+  padding: 0.4rem 0.55rem;
   box-shadow: var(--shadow-sm);
 }
 
